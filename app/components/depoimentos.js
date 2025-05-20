@@ -26,13 +26,37 @@ const testimonials = [
     foto: "/users/user4.jpg",
     avaliacao: 5,
   },
+    {
+    nome: "Wesley Vidal",
+    mensagem: "Adorei o tênis! Perfeito para a minha corrida diária.",
+    foto: "/users/user2.jpg",
+    avaliacao: 5,
+  },
+  {
+    nome: "Ana clara",
+    mensagem: "Ótima qualidade e conforto. Super recomendo!",
+    foto: "/users/user4.jpg",
+    avaliacao: 5,
+  },
+  {
+    nome: "Fabiano rogers",
+    mensagem: "Entrega rápida e produto excelente!",
+    foto: "/users/user1.jpg",
+    avaliacao: 5,
+  },
+  {
+    nome: "Julia Butters",
+    mensagem: "Design bonito e super confortável.",
+    foto: "/users/user6.jpg",
+    avaliacao: 5,
+  },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-12 px-4 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-        O que nossos clientes dizem
+    <section className="py-12 px-4 bg-gray-100 mt-14 mb-14">
+      <h2 className="mx-auto w-fit rounded-full bg-white shadow-lg px-8 py-4 font-roboto text-3xl font-bold text-gray-800 mb-12 text-center -tracking-tight uppercase">
+        Feedback de nossos clientes
       </h2>
       <div className="flex flex-wrap justify-center gap-8">
         {testimonials.map((t, index) => (

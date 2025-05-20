@@ -1,22 +1,50 @@
-'use client';
-import { useState } from "react";
+"use client"; // Diretiva para marcar o componente como Client Component
 
-export default function AdminLogin() {
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation"; // Para navegação no frontend
+
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Lógica de validação aqui (como por exemplo um JWT)
-    if (email === "admin@example.com" && password === "password123") {
-      // Redirecionar para a Dashboard
-      window.location.href = "/admin";
-    } else {
-      setError("Credenciais inválidas");
+    setError("");
+    setSuccess("");
+
+    // Validando e-mail
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!validEmail.test(email)) {
+      setError("Digite um e-mail válido.");
+      return;
+    }
+
+    // Validando campos preenchidos
+    if (!email || !password) {
+      setError("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Fazendo a chamada para a API de login
+    const res = await signIn("credentials", {
+    redirect: false,
+    email,
+    password,
+    });
+
+
+    // Verifique se a resposta é válida antes de tentar transformá-la em JSON
+    if (res?.error) {
+      setError("E-mail ou senha inválidos.");
+    } else if (res?.ok) {
+      router.push("/");
     }
   };
-
+  
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">

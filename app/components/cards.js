@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-export default function ProductCard({ id, name, image, price, rating = 4 }) {
+export default function ProductCard({ id, name, imageUrl, price, rating = 4 }) {
   const originalPrice = (price * 1.3).toFixed(2);
 
   const renderStars = () => {
@@ -23,7 +23,7 @@ export default function ProductCard({ id, name, image, price, rating = 4 }) {
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <div className="relative w-full h-56">
         <Image
-          src={image}
+          src={imageUrl}
           alt={name}
           layout="fill"
           objectFit="cover"
@@ -43,7 +43,7 @@ export default function ProductCard({ id, name, image, price, rating = 4 }) {
           <p className="text-gray-800 font-extrabold text-xl">Por R$ {price.toFixed(2)}</p>
         </div>
 
-        <Link href={`/produto/${id}`} className="mt-4 inline-block bg-blue-600 text-amber-50 font-semibold px-4 py-2 rounded-md hover:bg-blue-800 transition-all">
+        <Link href={`/products/${id}`} className="mt-4 inline-block bg-black text-amber-50 font-semibold px-4 py-2 rounded-md hover:bg-gray-800 transition-all">
             Ver mais
         </Link>
       </div>

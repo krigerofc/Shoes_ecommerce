@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
@@ -23,6 +24,19 @@ export default function RegisterPage() {
     e.preventDefault();
     setError("");
     setSuccess("");
+
+  const onlyLetters = /^[A-Za-zÀ-ÿ\s]+$/;
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!onlyLetters.test(form.name)) {
+    setError("O nome deve conter apenas letras.");
+    return;
+  }
+
+  if (!validEmail.test(form.email)) {
+    setError("Digite um e-mail válido.");
+    return;
+  }
 
     if (form.password !== form.confirmPassword) {
       setError("As senhas não coincidem.");
@@ -54,8 +68,10 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded shadow">
-      <h2 className="text-2xl font-bold mb-4 text-gray-950">Registrar</h2>
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-2xl border border-gray-200">
+      <h2 className="text-2xl font-bold mb-4 text-gray-950 text-center">Registrar</h2>
+
       {error && <p className="text-red-600 mb-2">{error}</p>}
       {success && <p className="text-green-600 mb-2">{success}</p>}
 
@@ -96,10 +112,11 @@ export default function RegisterPage() {
           required
           className="w-full p-2 border rounded text-gray-950"
         />
-        <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
+        <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">
           Criar conta
         </button>
       </form>
     </div>
-  );
+  </div>
+);
 }

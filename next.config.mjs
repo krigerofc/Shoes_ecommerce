@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['imgnike-a.akamaihd.net'],
+        domains: [
+        "assets.adidas.com",
+        "imgnike-a.akamaihd.net",
+        ],
       },
 };
 

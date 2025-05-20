@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"; // ícones 
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white py-8 px-4 text-aing-center">
+    <footer className="bg-black text-gray-50 py-8 px-4 text-aing-center">
       <div className="max-w-screen-xl mx-auto">
         {/* Seção de navegação */}
         <div className="flex justify-center space-x-24 mb-8">
@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contato</h3>
             <ul>
-              <li><a href="mailto:contato@loja.com" className="hover:text-yellow-500">Email: contato@loja.com</a></li>
+              <li><a href="mailto:contato@loja.com" className="hover:text-yellow-500">Email: kriger@loja.com</a></li>
               <li><a href="tel:+123456789" className="hover:text-yellow-500">Telefone: +12 3456 789</a></li>
             </ul>
           </div>
