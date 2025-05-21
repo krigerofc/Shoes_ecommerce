@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/db915bef-37ee-4e61-ad18-740a87d183bc)
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+![image](https://github.com/user-attachments/assets/25ef9bf6-a2c6-45cb-86fa-d7b251c3fe04)
+![image](https://github.com/user-attachments/assets/89d4dfa3-bad5-461c-99a0-14375e443311)
+![image](https://github.com/user-attachments/assets/c5fca34d-3fd9-4cbf-9f63-98c1492a3e17)
+![image](https://github.com/user-attachments/assets/0f2105e1-d303-4c7f-badc-48c9377ef595)
+![image](https://github.com/user-attachments/assets/385cbecb-b095-44d3-b9ea-fa58334aaad4)
+![Uploading image.png…]()
+
+
+
