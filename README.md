@@ -27,7 +27,7 @@ Segue abaixo algumas capturas de tela do projeto e suas páginas como demonstra�
 ![image](https://github.com/user-attachments/assets/c5fca34d-3fd9-4cbf-9f63-98c1492a3e17)
 ![image](https://github.com/user-attachments/assets/0f2105e1-d303-4c7f-badc-48c9377ef595)
 ![image](https://github.com/user-attachments/assets/385cbecb-b095-44d3-b9ea-fa58334aaad4)
-![Uploading image.png…]()
+
 
 ```bash
 npm install
