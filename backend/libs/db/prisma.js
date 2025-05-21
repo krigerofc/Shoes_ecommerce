@@ -134,11 +134,51 @@ class Database{
       });
       return shoe;
     } catch (error) {
-      return null; // Melhor retornar null do que o erro diretamente
+      return null; 
     }
+  }
+
+static async CartAdd(UserID, ProductID, Quantidade, Tamanho) {
+  try {
+    if (
+      !UserID || !ProductID || !Quantidade || !Tamanho ||
+      isNaN(Number(UserID)) || isNaN(Number(ProductID)) ||
+      isNaN(Number(Quantidade)) || isNaN(Number(Tamanho))
+    ) {
+      return null;
+    }
+
+    const existing = await prisma.cartItem.findFirst({
+      where: {
+        userId: Number(UserID),
+        productId: Number(ProductID),
+        size: Number(Tamanho),
+      }
+    });
+
+    if (existing) {
+      // Se já existe, incrementa a quantidade
+      return await prisma.cartItem.update({
+        where: { id: existing.id },
+        data: { quantity: existing.quantity + Number(Quantidade) }
+      });
+    }
+
+    // Se não existe, cria novo item
+    const Add_cart = await prisma.cartItem.create({
+      data: {
+        userId: Number(UserID),
+        productId: Number(ProductID),
+        quantity: Number(Quantidade),
+        size: Number(Tamanho),
+      }
+    });
+
+    return Add_cart || null;
+  } catch (error) {
+    return null;
   }
 }
 
-
-
+}
 export default Database;

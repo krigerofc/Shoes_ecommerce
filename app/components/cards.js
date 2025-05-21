@@ -19,6 +19,7 @@ export default function ProductCard({ id, name, imageUrl, price, rating = 4 }) {
     return stars;
   };
 
+
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <div className="relative w-full h-56">

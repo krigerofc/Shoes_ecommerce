@@ -22,8 +22,7 @@ export async function middleware(req) {
         return NextResponse.next();
     }
 
-
-    if (pathname.startsWith("/dashboard")){
+    if (pathname.startsWith("/cart")){
         if (!token){
             const url = req.nextUrl.clone();
             url.pathname = "/login";
@@ -32,7 +31,7 @@ export async function middleware(req) {
         return NextResponse.next();
     }
 
-    if (pathname.startsWith("/carrinho")){
+    if (pathname.startsWith("/profile")){
         if (!token){
             const url = req.nextUrl.clone();
             url.pathname = "/login";
@@ -46,5 +45,5 @@ export async function middleware(req) {
 
 // middleware.ts (no final do arquivo)
 export const config = {
-  matcher: ['/admin/:path*', '/admin'],
+  matcher: ['/admin/:path*', '/admin', '/cart', '/cart/:path*', '/profile', '/profile/:path*'],
 };

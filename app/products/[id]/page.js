@@ -2,6 +2,8 @@ import Nav from "@/app/components/nav";
 import ProductList from "@/app/components/productslist";
 import ProductView from "@/app/components/Productview";
 import Footer from "@/app/components/rodape";
+import { getServerSession } from "next-auth"; // ajuste o import conforme seu setup
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // ajuste o caminho conforme seu projeto
 
 export default async function IDproduct({ params }) {
     const id = params.id;
@@ -25,10 +27,13 @@ export default async function IDproduct({ params }) {
 
     const produto = await fetchProducts();
 
+    const session = await getServerSession(authOptions);
+    const userId = session?.user?.id ?? null;
+
     return (
         <>
             <Nav/>
-            <ProductView produto={produto} />
+            <ProductView produto={produto} userId={userId} />
             <ProductList/>
             <Footer/>
         </>
