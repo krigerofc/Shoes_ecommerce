@@ -8,6 +8,7 @@ Este projeto é um MVP (Minimum Viable Product) de uma loja online de tênis, de
 - **Next.js** – Framework poderoso para aplicações React.
 - **Prisma** – Banco de dados moderno e eficiente.
 - **Tailwind CSS** – Estilização rápida e responsiva.
+- **Next auth** - Sistema de segurança e autenticação.
 
 ## 📌 Status do Projeto
 Embora este seja um MVP, o projeto já conta com:
