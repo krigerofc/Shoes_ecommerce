@@ -1,4 +1,6 @@
 # Shoes Ecommerce - MVP 🚀
+![image](https://github.com/user-attachments/assets/16ac2abb-eaf7-4b79-af51-5440a84dd7eb)
+
 
 Este projeto é um MVP (Minimum Viable Product) de uma loja online de tênis, desenvolvido para testar a nova versão do **Next.js**. Embora ainda não esteja completamente finalizado, várias funcionalidades estão implementadas e operacionais.
 
